@@ -1,0 +1,136 @@
+/* Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat";
+    padding: 90px 20px 0;
+}
+
+.navbar {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    background-color: white;
+    font-size: 12px;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+}
+
+.navbar a {
+    color: #212429;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    text-transform: uppercase;
+}
+
+.navbar Button {
+    border: none;
+    background-color: #ffffff;
+    padding-left: 1rem;
+    padding-right: 3rem;
+}
+
+.flex-container {
+    display: flex;
+    background-color: white;
+    margin-top: 2rem;
+}
+
+.item-flex {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+p.item-flex {
+    text-transform: uppercase;
+    font-family: "Montserrat";
+    font-size: 24px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+p.item-flex::first-letter {
+    font-size: 130%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: white;
+    padding: 2rem;
+    margin: 2rem;
+    gap: 2rem;
+}
+
+.item-grid {
+    margin: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.grid-item-img {
+    max-width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.monserrat-title {
+    font-family: "Montserrat";
+    font-size: 24px;
+    font-weight: 700;
+    font-style: normal;
+    margin: 32px;
+}
+
+.descrip-price {
+    padding: 10px 15px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.monserrat-tarjeta {
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.monserrat-price {
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 700;
+    font-style: bold;
+}
+
+.footer-container {
+    display: flex;
+    background-color: black;
+    padding: 2rem;
+    justify-content: space-between;
+}
+
+.footer-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-item p {
+    margin: 0.5rem 1rem;
+    color: white;
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+}
