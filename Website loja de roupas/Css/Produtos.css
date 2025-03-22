@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+.image-container {
+    display: flex;
+    align-items: center; /* Alinha a imagem e o texto no centro vertical */
+}
+
+
+
+.imagem-produto {
+    padding-top: 100px;
+    width: 500px; /* Ajuste o tamanho conforme necessário */
+    margin-right: 275px; /* Dá espaço entre a imagem e o texto */
+    margin-left: 15%;
+  
+}
+
+.nome-produto {
+    
+    font-family: "Montserrat";
+    color: black;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    
+}
+
+.preco-produto {
+    font-family: "Montserrat";
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px; /* Espaço entre o nome e o preço */
+}
+
+.preco-parcelado {
+    font-family: "Montserrat";
+    color: #555;
+    font-size: 16px; /* Tamanho menor para a informação adicional */
+    margin-top: 5px; /* Espaço entre os preços */
+    padding-bottom: 25px;
+}
+
+
+p.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #000000;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    position: relative;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+p.button::before {
+  
+    font-size: 18px;
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black; 
+    transition: all 0.3s ease;
+}
+
+p.button::after {
+    
+    font-size: 18px;
+    position: absolute;
+    right: -25px; 
+    top: 50%;
+    transform: translateY(-50%);
+    color: black; 
+    transition: all 0.3s ease;
+}
+
+p.button:hover {
+    border: 2px solid;
+    border-radius: 5px;
+    background-color: #007bff;
+    border-color: #000000;
+}
+
+p.button:hover::before {
+    left: -45px; 
+}
+
+p.button:hover::after {
+    right: -45px; 
+}
+
+@media (max-width: 1130px) {
+    .image-container {
+        flex-direction: column; /* Empilha os itens em telas pequenas */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .imagem-produto {
+        width: 80%; /* A imagem ocupa mais espaço em telas pequenas */
+        margin-right: 0; /* Remove o espaço à direita da imagem */
+        margin-bottom: 20px; /* Espaço abaixo da imagem */
+    }
+
+    .descricao-produto {
+        width: 100%; /* A descrição ocupa toda a largura disponível */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .nome-produto {
+        font-size: px; /* Ajusta o tamanho da fonte */
+    }
+
+    .preco-por-pix {
+        font-size: 18px;
+    }
+
+    .preco-em-parcelas {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 10px 15px;
+        margin-bottom: 15px;
+    }
+}

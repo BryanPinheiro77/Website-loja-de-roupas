@@ -7,6 +7,11 @@
     box-sizing: border-box;
 }
 
+
+a {
+    text-decoration: none; /* Remove o sublinhado */
+}
+
 body {
     font-family: "Montserrat";
     padding: 90px 20px 0;
@@ -75,6 +80,8 @@ p.item-flex::first-letter {
     margin: 1rem;
     padding-right: 1rem;
     padding-left: 1rem;
+    width: 300px;
+    height: auto;
 }
 
 .grid-item-img {
@@ -96,14 +103,15 @@ p.item-flex::first-letter {
     padding: 10px 15px;
     margin: 10px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
 }
 
 .monserrat-tarjeta {
     font-family: "Montserrat";
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 700;
     font-style: normal;
+    color: black;
 }
 
 .monserrat-price {
@@ -111,13 +119,21 @@ p.item-flex::first-letter {
     font-size: 14px;
     font-weight: 700;
     font-style: bold;
-}
+    color: black; 
+} 
+
 
 .footer-container {
     display: flex;
     background-color: black;
     padding: 2rem;
     justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    flex: 1;
+    bottom: 0;
+    left: 0;
 }
 
 .footer-item {
@@ -133,4 +149,40 @@ p.item-flex::first-letter {
     font-weight: 400;
     font-style: normal;
     font-size: 1rem;
+}
+
+@media (max-width: 1130px) {
+    .image-container {
+        flex-direction: column; /* Empilha os itens em telas pequenas */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .imagem-produto {
+        width: 80%; /* A imagem ocupa mais espaço em telas pequenas */
+        margin-right: 0; /* Remove o espaço à direita da imagem */
+        margin-bottom: 20px; /* Espaço abaixo da imagem */
+    }
+
+    .descricao-produto {
+        width: 100%; /* A descrição ocupa toda a largura disponível */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .nome-produto {
+        font-size: px; /* Ajusta o tamanho da fonte */
+    }
+
+    .preco-por-pix {
+        font-size: 18px;
+    }
+
+    .preco-em-parcelas {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 10px 15px;
+        margin-bottom: 15px;
+    }
 }
