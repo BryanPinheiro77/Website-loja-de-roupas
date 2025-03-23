@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Css/Style.css" >
     <link rel="stylesheet" href="../../Css/Produtos.css" >
+    <link rel="stylesheet" href="../../JavaScript/Script.js">
     <title>Camiseta Slim</title>
 </head>
 <body>
+    
 
     <nav class="navbar">
         <div>
             <button><img src="./icons/icon-menu-burguer.svg" alt="">
             </button>
         </div>
-        
+
         <div>
             <a href="../index.html">Home</a>
             <a href="../Paginas/masc.html">Moda Masculina</a>
@@ -32,7 +34,7 @@
             </button>
         </div>
     </nav>  
-
+    
     <hr>
 
     <div class="image-container">
@@ -41,22 +43,19 @@
             <p class="nome-produto">Camiseta Slim Masculina</p>
             <p class="preco-produto">R$ 150,00 no pix</p>
             <p class="preco-parcelado">ou <strong>R$ 200,00</strong> em até 12x sem juros</p>
-            <p><strong>Tamanho:</strong>
-                <select name="tamanhos">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="M">G</option>
-                    <option value="M">GG</option>
-                </select>
-            </p>
-            <a href="">
-            <p class="button">Comprar</p>
-        </a>
+            <p><strong>Tamanho:</strong></p>
+            <div class="tamanhos">
+                <button class="tamanho-btn" data-tamanho="P">P</button>
+                <button class="tamanho-btn" data-tamanho="M">M</button>
+                <button class="tamanho-btn" data-tamanho="G">G</button>
+                <button class="tamanho-btn" data-tamanho="GG">GG</button>
+            </div>
+            <a href="#">
+                <p class="button">Comprar</p>
+            </a>
         </div>
-    </div>
-    
 
-    
+   
     <footer class="footer-container">
         <div class="footer-item">
             <img src="./icons/icon-truck.svg" alt="">
@@ -76,6 +75,6 @@
        
     </div>
     </footer>   
-
+    <script src="../../JavaScript/Script.js"></script>
 </body>
 </html>
