@@ -106,6 +106,7 @@ p.button:hover::after {
     .imagem-produto {
         width: 80%; /* A imagem ocupa mais espaço em telas pequenas */
         margin-right: 0; /* Remove o espaço à direita da imagem */
+        margin-left: 0;
         margin-bottom: 20px; /* Espaço abaixo da imagem */
     }
 
