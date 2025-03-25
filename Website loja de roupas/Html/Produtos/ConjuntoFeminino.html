@@ -29,28 +29,28 @@
             <button><img src="./icons/icon-heart.svg" alt="">            
             </button>
             <button class="botao-carrinho" onclick="abrirCarrinho()">
-                <img class="carrinho" src="../Images/icon-shopping-cart.png" alt="Carrinho">
+                <img class="carrinho" src="../../Images/icon-shopping-cart.png" alt="Carrinho">
             </button>
         </div>
     </nav>  
     
-    <div class="image-container">
-        <img class="imagem-produto" src="../../Images/Conjunto Feminino.jpg" alt="Conjunto Inverno Feminino">
-        <div class="produto-info">
-            <p class="nome-produto">Conjunto De Inverno Feminino</p>
-            <p class="preco-produto">R$ 250,00 no pix</p>
-            <p class="preco-parcelado">ou <strong>R$ 289,99</strong> em até 12x sem juros</p>
-            <p><strong>Tamanho:</strong>
-                <select name="tamanhos">
-                    <option value="P">P</option>
-                    <option value="M">M</option>
-                    <option value="M">G</option>
-                    <option value="M">GG</option>
-                </select>
-            </p>
-            <a href="">
-            <p class="button">Comprar</p>
-        </a>
+    
+            <div class="image-container">
+                <img class="imagem-produto" src="../../Images/Conjunto Feminino.jpg" alt="Calça Jeans">
+                <div class="produto-info">
+                    <p class="nome-produto">Conjunto De Inverno Feminino</p>
+                    <p class="preco-produto">R$ 250,00 no pix</p>
+                    <p class="preco-parcelado">ou <strong>R$ 289,99</strong> em até 12x sem juros</p>
+                    <p><strong>Tamanho:</strong></p>
+                    <div class="tamanhos">
+                        <button class="tamanho-btn" data-tamanho="P">P</button>
+                        <button class="tamanho-btn" data-tamanho="M">M</button>
+                        <button class="tamanho-btn" data-tamanho="G">G</button>
+                        <button class="tamanho-btn" data-tamanho="GG">GG</button>
+                    </div>
+            <a href="#" onclick="adicionarAoCarrinho('Conjunto Feminino', '250,00', obterTamanhoSelecionado())">
+                <p class="button">Comprar</p>
+            </a>
         </div>
     </div>
     
