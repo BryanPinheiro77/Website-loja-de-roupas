@@ -17,10 +17,130 @@ body {
     padding: 90px 20px 0;
 }
 
+.carrinho {
+    width: 32px;  /* Defina um tamanho menor para o ícone */
+    height: 32px; /* Mantém a proporção */
+}
+
+.botao-carrinho {
+    background: none;  /* Remove o fundo do botão */
+    border: none;      /* Remove borda */
+    cursor: pointer;   /* Torna clicável */
+    padding: 5px;      /* Ajusta o espaçamento */
+}
+
+.footer-carrinho {
+    margin-top: auto; /* Empurra o botão para o final do sidebar */
+    padding-top: 20px;
+}
+
+/* Estilos do botão "Limpar Carrinho" */
+.limpar-carrinho-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    position: relative;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.limpar-carrinho-btn::before {
+    font-size: 18px;
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black; 
+    transition: all 0.3s ease;
+}
+
+.limpar-carrinho-btn::after {
+    font-size: 18px;
+    position: absolute;
+    right: -25px; 
+    top: 50%;
+    transform: translateY(-50%);
+    color: black; 
+    transition: all 0.3s ease;
+}
+
+.limpar-carrinho-btn:hover {
+    border: 2px solid;
+    border-radius: 5px;
+    background-color: #007bff;
+    border-color: #000000;
+}
+
+.limpar-carrinho-btn:hover::before {
+    left: -45px; 
+}
+
+.limpar-carrinho-btn:hover::after {
+    right: -45px; 
+}
+
+/* Efeito de hover */
+.limpar-carrinho-btn:hover {
+    background-color: black; /* Fundo preto quando passar o mouse */
+    color: white; /* Texto branco quando passar o mouse */
+    border-color: white; /* Borda branca quando passar o mouse */
+}
+
+/* Estilos do Sidebar do Carrinho */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Escondido inicialmente */
+    width: 300px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+/* Quando a sidebar estiver ativa, ela vai se mover para a posição visível */
+.sidebar.ativo {
+    right: 0;
+}
+
+/* Estilos do botão de fechar */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Estilos gerais do conteúdo da sidebar */
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #212429;
+}
+
+#conteudo-carrinho {
+    padding: 20px;
+    color: #212429;
+}
+
 .navbar {
     overflow: hidden;
     position: fixed;
-    top: 0;
+    top: 15px;
     width: 100%;
     display: flex;
     background-color: white;
@@ -164,6 +284,8 @@ p.item-flex::first-letter {
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s;
+    z-index: 10;
+    margin: 5px; /* Adiciona margem para melhorar o layout */
 }
 
 .tamanho-btn:hover {
@@ -174,6 +296,7 @@ p.item-flex::first-letter {
 .tamanho-btn.selecionado {
     background-color: #000;
     color: #fff;
+    z-index: 20; /* Aumenta o z-index do botão selecionado para garantir que ele fique em cima */
 }
 
 @media (max-width: 1130px) {

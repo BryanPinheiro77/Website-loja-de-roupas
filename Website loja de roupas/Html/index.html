@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/Style.css" >
+    <script src="../JavaScript/Script.js"></script>
+
     <title>Projeto Integrador</title>
 
 </head>
@@ -13,7 +15,7 @@
     
     <nav class="navbar">
         <div>
-            <button><img src="./icons/icon-menu-burguer.svg" alt="">
+            <button><img class="carrinho" src="../Images/icon-menu-burguer.png" alt="">
             </button>
         </div>
         
@@ -29,7 +31,8 @@
             </button>
             <button><img src="./icons/icon-heart.svg" alt="">            
             </button>
-            <button><img src="./icons/icon-shopping-cart.svg" alt="">            
+            <button class="botao-carrinho" onclick="abrirCarrinho()">
+                <img class="carrinho" src="../Images/icon-shopping-cart.png" alt="Carrinho">
             </button>
         </div>
     </nav>  
@@ -47,8 +50,9 @@
             <div class="descrip-price">
                 <p class="monserrat-tarjeta">Camiseta Slim</p>
                 <p class="monserrat-price">R$ 150,00</p>
-            </a>
+            
             </div>
+        </a>
         </div>
 
         <div class="item-grid">
@@ -83,10 +87,12 @@
         </div>
 
         <div class="item-grid">
-            <img class="grid-item-img" src="     " alt="">
+            <a href="../Html/Produtos/MoletomFeminino.html">
+            <img class="grid-item-img" src="../Images/Moletom Feminino.avif" alt="">
             <div class="descrip-price">
                 <p class="monserrat-tarjeta"></p>
                 <p class="monserrat-price">25.00 R$</p>
+            </a>
             </div>
         </div>
 
@@ -97,7 +103,7 @@
                 <p class="monserrat-price">22.99 R$</p>
             </div>
         </div>
-    </div>
+    
     <hr>
 
     <div class="flex-container">
@@ -121,8 +127,18 @@
             <p class="footer-item">shop@surf.com</p>
         </div>
        
+    
+    </footer>
+    
+    <!-- Sidebar do Carrinho -->
+    <div id="sidebar-carrinho" class="sidebar">
+        <button class="close-btn" onclick="fecharCarrinho()">&times;</button>
+        <h2>Seu Carrinho</h2>
+        <div id="conteudo-carrinho">
+            <p>Seu carrinho está vazio.</p>
+        </div>
     </div>
-    </footer>   
+
 
     
 </body>
