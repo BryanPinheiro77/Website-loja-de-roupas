@@ -30,7 +30,8 @@
             </button>
             <button><img src="./icons/icon-heart.svg" alt="">            
             </button>
-            <button><img src="./icons/icon-shopping-cart.svg" alt="">            
+            <button class="botao-carrinho" onclick="abrirCarrinho()">
+                <img class="carrinho" src="../Images/icon-shopping-cart.png" alt="Carrinho">
             </button>
         </div>
     </nav>  
@@ -76,6 +77,21 @@
        
     </div>
     </footer>   
+
+    <!-- Sidebar do Carrinho -->
+<div id="sidebar-carrinho" class="sidebar">
+    <button class="close-btn" onclick="fecharCarrinho()">&times;</button>
+    <h2>Seu Carrinho</h2>
+    <div id="conteudo-carrinho">
+        <p>Seu carrinho está vazio.</p>
+    </div>
+
+    <!-- Container para o botão de limpar -->
+    <div class="footer-carrinho">
+        <button class="button limpar-carrinho-btn" onclick="limparCarrinho()">Limpar Carrinho</button>
+    </div>
+</div>
+
     <script src="../../JavaScript/Script.js"></script>
 </body>
 </html>

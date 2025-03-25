@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Css/Style.css" >
-    <script src="../JavaScript/Script.js"></script>
 
     <title>Projeto Integrador</title>
 
@@ -131,15 +130,19 @@
     </footer>
     
     <!-- Sidebar do Carrinho -->
-    <div id="sidebar-carrinho" class="sidebar">
-        <button class="close-btn" onclick="fecharCarrinho()">&times;</button>
-        <h2>Seu Carrinho</h2>
-        <div id="conteudo-carrinho">
-            <p>Seu carrinho está vazio.</p>
-        </div>
+<div id="sidebar-carrinho" class="sidebar">
+    <button class="close-btn" onclick="fecharCarrinho()">&times;</button>
+    <h2>Seu Carrinho</h2>
+    <div id="conteudo-carrinho">
+        <p>Seu carrinho está vazio.</p>
     </div>
 
+    <!-- Container para o botão de limpar -->
+    <div class="footer-carrinho">
+        <button class="button limpar-carrinho-btn" onclick="limparCarrinho()">Limpar Carrinho</button>
+    </div>
+</div>
 
-    
+<script src="../JavaScript/Script.js"></script>
 </body>
 </html>
