@@ -88,7 +88,7 @@ function exibirCarrinho() {
                 <p>Tamanho: ${item.tamanho}</p>
                 <p>Preço: R$ ${item.preco}</p>
                 <button onclick="removerDoCarrinho(${index})" class="remover-btn">
-                    <img src="lixeira.png" alt="Remover" width="20" height="20">
+                    <img src="../../images/icon-lata-lixo.png" alt="Remover" width="20" height="20">
                 </button>
             `;
             conteudoCarrinho.appendChild(divItem);
