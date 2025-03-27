@@ -125,6 +125,7 @@ function limparCarrinho() {
     exibirCarrinho();
 }
 // Função para finalizar a compra
+// Função para finalizar a compra com opções de pagamento
 function finalizarCompra() {
     if (carrinho.length === 0) {
         alert("Seu carrinho está vazio. Adicione itens antes de finalizar a compra.");
@@ -139,12 +140,38 @@ function finalizarCompra() {
     carrinho.forEach(item => {
         resumo += `${item.nome} (Tamanho: ${item.tamanho}) - R$ ${item.preco}\n`;
     });
+    resumo += `\nTotal: R$ ${total.toFixed(2)}`;
     
+    // Criar diálogo com opções de pagamento
+    const metodoPagamento = prompt(
+        `${resumo}\n\nSelecione o método de pagamento:\n\n` +
+        `1 - Cartão de Crédito\n` +
+        `2 - Pix\n` +
+        `3 - Boleto Bancário\n` +
+        `4 - Cartão de Débito\n\n` +
+        `Digite o número da opção desejada:`
+    );
+
+    // Verificar se o usuário selecionou uma opção válida
+    if (!metodoPagamento || metodoPagamento < 1 || metodoPagamento > 4) {
+        alert("Opção de pagamento inválida. Por favor, tente novamente.");
+        return;
+    }
+
+    // Mapear opções de pagamento
+    const metodos = {
+        1: "Cartão de Crédito",
+        2: "Pix",
+        3: "Boleto Bancário",
+        4: "Cartão de Débito"
+    };
+
+    const metodoSelecionado = metodos[metodoPagamento];
     
-    // Mostrar confirmação
-    if (confirm(`${resumo}\n\nDeseja finalizar a compra?`)) {
-        // Aqui você pode adicionar lógica para enviar o pedido para um servidor
-        alert("Compra finalizada com sucesso! Obrigado por sua compra.");
+    // Mostrar confirmação final
+    if (confirm(`${resumo}\n\nMétodo de Pagamento: ${metodoSelecionado}\n\nDeseja confirmar a compra?`)) {
+        // Aqui você pode adicionar lógica para processar o pagamento
+        alert(`Compra finalizada com sucesso!\n\nMétodo de Pagamento: ${metodoSelecionado}\n\nObrigado por sua compra!`);
         
         // Limpar o carrinho após finalização
         limparCarrinho();
@@ -164,6 +191,9 @@ function exibirCarrinho() {
     if (carrinho.length === 0) {
         conteudoCarrinho.innerHTML = "<p>Seu carrinho está vazio.</p>";
     } else {
+        // Calcular o total
+        let total = carrinho.reduce((sum, item) => sum + parseFloat(item.preco), 0);
+        
         // Exibe os itens do carrinho
         carrinho.forEach((item, index) => {
             const divItem = document.createElement("div");
@@ -178,6 +208,12 @@ function exibirCarrinho() {
             `;
             conteudoCarrinho.appendChild(divItem);
         });
+
+        // Adiciona o total
+        const divTotal = document.createElement("div");
+        divTotal.classList.add("total-carrinho");
+        divTotal.innerHTML = `<p><strong>Total: R$ ${total.toFixed(2)}</strong></p>`;
+        conteudoCarrinho.appendChild(divTotal);
 
         // Adiciona o botão de finalizar compra
         const finalizarBtn = document.createElement("button");
