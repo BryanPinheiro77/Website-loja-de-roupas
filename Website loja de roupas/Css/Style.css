@@ -53,6 +53,25 @@ body {
     width: 100%;
 }
 
+
+.finalizar-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.finalizar-btn:hover {
+    background-color: #45a049;
+}
+
 .limpar-carrinho-btn::before {
     font-size: 18px;
     position: absolute;
@@ -334,5 +353,3 @@ p.item-flex::first-letter {
         margin-bottom: 15px;
     }
 }
-
-
