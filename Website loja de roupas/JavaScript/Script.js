@@ -5,6 +5,7 @@ let carrinho = JSON.parse(localStorage.getItem('carrinho')) || []; // Mantém o 
 function abrirCarrinho() {
     const sidebar = document.getElementById("sidebar-carrinho");
     sidebar.classList.add("ativo");
+    
 
     // Exibe o conteúdo do carrinho
     exibirCarrinho();
@@ -122,4 +123,67 @@ function limparCarrinho() {
 
     // Exibir o carrinho atualizado (que agora está vazio)
     exibirCarrinho();
+}
+// Função para finalizar a compra
+function finalizarCompra() {
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio. Adicione itens antes de finalizar a compra.");
+        return;
+    }
+
+    // Calcular o total
+    let total = carrinho.reduce((sum, item) => sum + parseFloat(item.preco), 0);
+    
+    // Criar resumo do pedido
+    let resumo = "Resumo do Pedido:\n\n";
+    carrinho.forEach(item => {
+        resumo += `${item.nome} (Tamanho: ${item.tamanho}) - R$ ${item.preco}\n`;
+    });
+    resumo += `\nTotal: R$ ${total.toFixed(2)}`;
+    
+    // Mostrar confirmação
+    if (confirm(`${resumo}\n\nDeseja finalizar a compra?`)) {
+        // Aqui você pode adicionar lógica para enviar o pedido para um servidor
+        alert("Compra finalizada com sucesso! Obrigado por sua compra.");
+        
+        // Limpar o carrinho após finalização
+        limparCarrinho();
+        
+        // Fechar o carrinho
+        fecharCarrinho();
+    }
+}
+
+// Modifique a função exibirCarrinho para incluir o botão de finalizar
+function exibirCarrinho() {
+    const conteudoCarrinho = document.getElementById("conteudo-carrinho");
+
+    // Limpa o conteúdo atual do carrinho
+    conteudoCarrinho.innerHTML = "";
+
+    if (carrinho.length === 0) {
+        conteudoCarrinho.innerHTML = "<p>Seu carrinho está vazio.</p>";
+    } else {
+        // Exibe os itens do carrinho
+        carrinho.forEach((item, index) => {
+            const divItem = document.createElement("div");
+            divItem.classList.add("item-carrinho");
+            divItem.innerHTML = `
+                <p>${item.nome}</p>
+                <p>Tamanho: ${item.tamanho}</p>
+                <p>Preço: R$ ${item.preco}</p>
+                <button onclick="removerDoCarrinho(${index})" class="remover-btn">
+                    <img src="../../images/icon-lata-lixo.png" alt="Remover" width="20" height="20">
+                </button>
+            `;
+            conteudoCarrinho.appendChild(divItem);
+        });
+
+        // Adiciona o botão de finalizar compra
+        const finalizarBtn = document.createElement("button");
+        finalizarBtn.textContent = "Finalizar Compra";
+        finalizarBtn.classList.add("finalizar-btn");
+        finalizarBtn.onclick = finalizarCompra;
+        conteudoCarrinho.appendChild(finalizarBtn);
+    }
 }
