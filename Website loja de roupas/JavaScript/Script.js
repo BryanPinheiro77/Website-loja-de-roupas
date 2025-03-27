@@ -139,7 +139,7 @@ function finalizarCompra() {
     carrinho.forEach(item => {
         resumo += `${item.nome} (Tamanho: ${item.tamanho}) - R$ ${item.preco}\n`;
     });
-    resumo += `\nTotal: R$ ${total.toFixed(2)}`;
+    
     
     // Mostrar confirmação
     if (confirm(`${resumo}\n\nDeseja finalizar a compra?`)) {
