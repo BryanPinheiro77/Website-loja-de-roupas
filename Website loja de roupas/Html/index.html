@@ -8,15 +8,37 @@
 
     <title>Projeto Integrador</title>
 
+    <script>
+        // Verifica se o usuário está logado ao carregar a página
+        window.onload = function () {
+          const usuarioLogado = localStorage.getItem("usuarioLogado");
+          if (!usuarioLogado) {
+            window.location.href = "../Html/Paginas/login.html";
+          }
+        };
+    
+        // Função de logout
+        function logout() {
+          localStorage.removeItem("usuarioLogado");
+          window.location.href = "../Html/Paginas/login.html";
+        }
+      </script>
+
 </head>
 
+  
 <body>
-    
+
+    <button onclick="logout()">Sair</button>
+
     <nav class="navbar">
         <div>
-            <button><img class="carrinho" src="../Images/icon-menu-burguer.png" alt="">
+            <!-- Ícone de Menu Hamburguer -->
+            <button onclick="abrirMenu()">
+                <img class="carrinho" src="../Images/icon-menu-burguer.png" alt="Menu">
             </button>
         </div>
+
         
         <div>
             <a href="../Html/Paginas/masc.html">Moda Masculina</a>
@@ -35,6 +57,12 @@
             </button>
         </div>
     </nav>  
+
+    <div id="sidebar-menu" class="sidebar">
+        <button class="close-btn" onclick="fecharMenu()">&times;</button>
+        <h2>Menu</h2>
+        <button class="logout-btn" onclick="logout()">Sair</button>
+    </div>
     
     <hr>
     
