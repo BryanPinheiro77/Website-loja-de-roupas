@@ -7,16 +7,22 @@
     <link rel="stylesheet" href="../Css/Style.css" >
 
     <title>Projeto Integrador</title>
-
 </head>
 
 <body>
-    
+
+  
+
+
     <nav class="navbar">
+        
         <div>
-            <button><img class="carrinho" src="../Images/icon-menu-burguer.png" alt="">
+            <!-- Ícone de Menu Hamburguer -->
+            <button onclick="abrirMenu()">
+                <img class="carrinho" src="../Images/icon-menu-burguer.png" alt="Menu">
             </button>
         </div>
+
         
         <div>
             <a href="../Html/Paginas/masc.html">Moda Masculina</a>
@@ -33,8 +39,16 @@
             <button class="botao-carrinho" onclick="abrirCarrinho()">
                 <img class="carrinho" src="../Images/icon-shopping-cart.png" alt="Carrinho">
             </button>
+
+            <button class="botao-sair" onclick="logout()">Sair</button>
         </div>
     </nav>  
+
+    <div id="sidebar-menu" class="sidebar">
+        <button class="close-btn" onclick="fecharMenu()">&times;</button>
+        <h2>Menu</h2>
+        <button class="botao-sair" onclick="logout()">Sair</button>
+    </div>
     
     <hr>
     
@@ -68,9 +82,9 @@
 
         <div class="item-grid">
             <a href="../Html/Produtos/AirForce.html">
-            <img class="grid-item-img" src="../Images/Air force.png" alt="Air force One">
+            <img class="grid-item-img" src="../Images/Air force.png" alt="Air Force One">
             <div class="descrip-price">
-                <p class="monserrat-tarjeta">Nike Air Force One</p>
+                <p class="monserrat-tarjeta">Air Force One</p>
                 <p class="monserrat-price">R$ 799,99</p>
             </a>
             </div>
@@ -78,9 +92,9 @@
 
         <div class="item-grid">
             <a href="../Html/Produtos/MoletomBranco.html">
-            <img class="grid-item-img"  src="../Images/Moletom Branco.png" alt="Blusa Moletom">
+            <img class="grid-item-img"  src="../Images/Moletom Branco.png" alt="Moletom Branco">
             <div class="descrip-price">
-                <p class="monserrat-tarjeta">Moletom Masculino</p>
+                <p class="monserrat-tarjeta">Moletom Branco</p>
                 <p class="monserrat-price">R$ 199,99</p>
             </a>
             </div>
@@ -88,19 +102,21 @@
 
         <div class="item-grid">
             <a href="../Html/Produtos/MoletomFeminino.html">
-            <img class="grid-item-img" src="../Images/Moletom Feminino.avif" alt="">
+            <img class="grid-item-img" src="../Images/Moletom Feminino.avif" alt="Moletom Feminino">
             <div class="descrip-price">
-                <p class="monserrat-tarjeta"></p>
-                <p class="monserrat-price">189,99 R$</p>
+                <p class="monserrat-tarjeta">Moletom Puma Feminino</p>
+                <p class="monserrat-price">R$ 189,99</p>
             </a>
             </div>
         </div>
 
         <div class="item-grid">
-            <img class="grid-item-img"  src="   " alt="">
+            <a href="../Html/Produtos/ConjuntoFeminino.html">
+            <img class="grid-item-img" src="../Images/Conjunto Feminino.jpg" alt="Conjunto De Inverno Feminino">
             <div class="descrip-price">
-                <p class="monserrat-tarjeta"></p>
-                <p class="monserrat-price">22.99 R$</p>
+                <p class="monserrat-tarjeta">Conjunto De Inverno Feminino</p>
+                <p class="monserrat-price">R$ 250,00</p>
+            </a>
             </div>
         </div>
     </div>

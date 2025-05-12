@@ -53,6 +53,25 @@ body {
     width: 100%;
 }
 
+
+.finalizar-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.finalizar-btn:hover {
+    background-color: #45a049;
+}
+
 .limpar-carrinho-btn::before {
     font-size: 18px;
     position: absolute;
@@ -299,6 +318,24 @@ p.item-flex::first-letter {
     z-index: 20; /* Aumenta o z-index do botão selecionado para garantir que ele fique em cima */
 }
 
+.botao-sair {
+    background-color: #ff4d4d !important;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold !important;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: MontSerrat;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .botao-sair:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+  }
+
 @media (max-width: 1130px) {
     .image-container {
         flex-direction: column; /* Empilha os itens em telas pequenas */
@@ -333,6 +370,7 @@ p.item-flex::first-letter {
         padding: 10px 15px;
         margin-bottom: 15px;
     }
+
+   
+      
 }
-
-

@@ -1,3 +1,17 @@
+ // Verifica se o usuário está logado ao carregar a página
+ window.onload = function () {
+    const usuarioLogado = localStorage.getItem("usuarioLogado");
+    if (!usuarioLogado) {
+      window.location.href = "../Html/Paginas/login.html";
+    }
+  };
+
+  // Função de logout
+  function logout() {
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "../../Html/Paginas/login.html";
+  }
+
 // Array para armazenar os itens no carrinho
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || []; // Mantém o carrinho persistente no navegador
 
@@ -5,6 +19,7 @@ let carrinho = JSON.parse(localStorage.getItem('carrinho')) || []; // Mantém o 
 function abrirCarrinho() {
     const sidebar = document.getElementById("sidebar-carrinho");
     sidebar.classList.add("ativo");
+    
 
     // Exibe o conteúdo do carrinho
     exibirCarrinho();
@@ -88,7 +103,7 @@ function exibirCarrinho() {
                 <p>Tamanho: ${item.tamanho}</p>
                 <p>Preço: R$ ${item.preco}</p>
                 <button onclick="removerDoCarrinho(${index})" class="remover-btn">
-                    <img src="lixeira.png" alt="Remover" width="20" height="20">
+                    <img src="../images/icon-lata-lixo.png" alt="Remover" width="20" height="20">
                 </button>
             `;
             conteudoCarrinho.appendChild(divItem);
@@ -122,4 +137,104 @@ function limparCarrinho() {
 
     // Exibir o carrinho atualizado (que agora está vazio)
     exibirCarrinho();
+}
+// Função para finalizar a compra
+// Função para finalizar a compra com opções de pagamento
+function finalizarCompra() {
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio. Adicione itens antes de finalizar a compra.");
+        return;
+    }
+
+    // Calcular o total
+    let total = carrinho.reduce((sum, item) => sum + parseFloat(item.preco), 0);
+    
+    // Criar resumo do pedido
+    let resumo = "Resumo do Pedido:\n\n";
+    carrinho.forEach(item => {
+        resumo += `${item.nome} (Tamanho: ${item.tamanho}) - R$ ${item.preco}\n`;
+    });
+    resumo += `\nTotal: R$ ${total.toFixed(2)}`;
+    
+    // Criar diálogo com opções de pagamento
+    const metodoPagamento = prompt(
+        `${resumo}\n\nSelecione o método de pagamento:\n\n` +
+        `1 - Cartão de Crédito\n` +
+        `2 - Pix\n` +
+        `3 - Boleto Bancário\n` +
+        `4 - Cartão de Débito\n\n` +
+        `Digite o número da opção desejada:`
+    );
+
+    // Verificar se o usuário selecionou uma opção válida
+    if (!metodoPagamento || metodoPagamento < 1 || metodoPagamento > 4) {
+        alert("Opção de pagamento inválida. Por favor, tente novamente.");
+        return;
+    }
+
+    // Mapear opções de pagamento
+    const metodos = {
+        1: "Cartão de Crédito",
+        2: "Pix",
+        3: "Boleto Bancário",
+        4: "Cartão de Débito"
+    };
+
+    const metodoSelecionado = metodos[metodoPagamento];
+    
+    // Mostrar confirmação final
+    if (confirm(`${resumo}\n\nMétodo de Pagamento: ${metodoSelecionado}\n\nDeseja confirmar a compra?`)) {
+        // Aqui você pode adicionar lógica para processar o pagamento
+        alert(`Compra finalizada com sucesso!\n\nMétodo de Pagamento: ${metodoSelecionado}\n\nObrigado por sua compra!`);
+        
+        // Limpar o carrinho após finalização
+        limparCarrinho();
+        
+        // Fechar o carrinho
+        fecharCarrinho();
+    }
+}
+
+// Modifique a função exibirCarrinho para incluir o botão de finalizar
+function exibirCarrinho() {
+    const conteudoCarrinho = document.getElementById("conteudo-carrinho");
+
+    // Limpa o conteúdo atual do carrinho
+    conteudoCarrinho.innerHTML = "";
+
+    if (carrinho.length === 0) {
+        conteudoCarrinho.innerHTML = "<p>Seu carrinho está vazio.</p>";
+    } else {
+        // Calcular o total
+        let total = carrinho.reduce((sum, item) => sum + parseFloat(item.preco), 0);
+        
+        // Exibe os itens do carrinho
+        carrinho.forEach((item, index) => {
+            const divItem = document.createElement("div");
+            divItem.classList.add("item-carrinho");
+            divItem.innerHTML = `
+                <p>${item.nome}</p>
+                <p>Tamanho: ${item.tamanho}</p>
+                <p>Preço: R$ ${item.preco}</p>
+                <button onclick="removerDoCarrinho(${index})" class="remover-btn">
+                    <img src="../../images/icon-lata-lixo.png" alt="Remover" width="20" height="20">
+                </button>
+            `;
+            conteudoCarrinho.appendChild(divItem);
+        });
+
+        // Adiciona o total
+        const divTotal = document.createElement("div");
+        divTotal.classList.add("total-carrinho");
+        divTotal.innerHTML = `<p><strong>Total: R$ ${total.toFixed(2)}</strong></p>`;
+        conteudoCarrinho.appendChild(divTotal);
+
+        // Adiciona o botão de finalizar compra
+        const finalizarBtn = document.createElement("button");
+        finalizarBtn.textContent = "Finalizar Compra";
+        finalizarBtn.classList.add("finalizar-btn");
+        finalizarBtn.onclick = finalizarCompra;
+        conteudoCarrinho.appendChild(finalizarBtn);
+    }
+    
 }

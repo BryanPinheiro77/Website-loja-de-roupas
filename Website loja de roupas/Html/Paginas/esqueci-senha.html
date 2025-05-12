@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Recuperar Senha</title>
+  <link rel="stylesheet" href="../Css/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5f5f5;
+      margin: 0;
+    }
+    .recuperar-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 300px;
+      
+    }
+    h2 {
+      text-align: center;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="recuperar-container">
+    <h2>Redefinir Senha</h2>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="novaSenha" placeholder="Nova Senha" required>
+    <button onclick="alterarSenha()">Alterar Senha</button>
+  </div>
+
+  <script>
+    function alterarSenha() {
+      const email = document.getElementById('email').value;
+      const novaSenha = document.getElementById('novaSenha').value;
+      const usuario = JSON.parse(localStorage.getItem(email));
+
+      if (usuario) {
+        usuario.senha = novaSenha;
+        localStorage.setItem(email, JSON.stringify(usuario));
+        alert("Senha atualizada com sucesso!");
+        window.location.href = "login.html";
+
+      } else {
+        alert("Email não encontrado.");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -85,7 +85,8 @@ p.button::after {
 p.button:hover {
     border: 2px solid;
     border-radius: 5px;
-    background-color: #007bff;
+    color: #000000;
+    background-color: #ffffff;
     border-color: #000000;
 }
 

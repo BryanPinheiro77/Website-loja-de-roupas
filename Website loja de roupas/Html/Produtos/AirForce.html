@@ -6,13 +6,16 @@
     <link rel="stylesheet" href="../../Css/Style.css" >
     <link rel="stylesheet" href="../../Css/Produtos.css" >
     <title>Air Force One</title>
+
 </head>
 <body>
     
 
     <nav class="navbar">
         <div>
-            <button><img class="carrinho" src="../../Images/icon-menu-burguer.png" alt="">
+            <!-- Ícone de Menu Hamburguer -->
+            <button onclick="abrirMenu()">
+                <img class="carrinho" src="../../Images/icon-menu-burguer.png" alt="Menu">
             </button>
         </div>
         
@@ -32,6 +35,7 @@
             <button class="botao-carrinho" onclick="abrirCarrinho()">
                 <img class="carrinho" src="../../Images/icon-shopping-cart.png" alt="Carrinho">
             </button>
+            <button class="botao-sair" onclick="logout()">Sair</button>
         </div>
     </nav>  
 
