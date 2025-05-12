@@ -1,17 +1,3 @@
- // Verifica se o usuário está logado ao carregar a página
- window.onload = function () {
-    const usuarioLogado = localStorage.getItem("usuarioLogado");
-    if (!usuarioLogado) {
-      window.location.href = "../Html/Paginas/login.html";
-    }
-  };
-
-  // Função de logout
-  function logout() {
-    localStorage.removeItem("usuarioLogado");
-    window.location.href = "../../Html/Paginas/login.html";
-  }
-
 // Array para armazenar os itens no carrinho
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || []; // Mantém o carrinho persistente no navegador
 

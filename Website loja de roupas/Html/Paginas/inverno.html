@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Css/Style.css" >
     <title>Coleção de inverno</title>
+    <script>
+         // Verifica se o usuário está logado ao carregar a página
+ window.onload = function () {
+    const usuarioLogado = localStorage.getItem("usuarioLogado");
+    if (!usuarioLogado) {
+      window.location.href = "/Website loja de roupas/Html/Paginas/login.html";
+    }
+  };
+
+  // Função de logout
+  function logout() {
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "/Website loja de roupas/Html/Paginas/login.html";
+  }
+    </script>
 </head>
 <body>
 
@@ -47,19 +62,11 @@
 
     <div class="grid-container">
         <div class="item-grid">
-<<<<<<< HEAD
-            <a href="../Produtos/ConjuntoFeminino.html">
-            <img class="grid-item-img"  src="../../Images/Conjunto Feminino.jpg" alt="Conjunto Feminino">
-            <div class="descrip-price">
-                <p class="monserrat-tarjeta">Conjunto De Inverno Feminino</p>
-                <p class="monserrat-price">R$ 250,00</p>
-=======
             <a href="../../Html/Produtos/MoletomFeminino.html">
             <img class="grid-item-img"  src="../../Images/Moletom Feminino.avif" alt="Moletom Feminino">
             <div class="descrip-price">
                 <p class="monserrat-tarjeta">Moletom Puma Feminino</p>
                 <p class="monserrat-price">R$ 189,99</p>
->>>>>>> d8d8196f713447f8c7c5aa5de8d0320e518a65bf
             </a>
             </div>
         </div>
@@ -69,28 +76,18 @@
             <img class="grid-item-img" src="../../Images/Conjunto Feminino.jpg" alt="Conjunto Feminino">
         
             <div class="descrip-price">
-<<<<<<< HEAD
-                <p class="monserrat-tarjeta"></p>
-                <p class="monserrat-price"></p>
-=======
                 <p class="monserrat-tarjeta">Conjunto Feminino</p>
                 <p class="monserrat-price">R$250,00</p>
->>>>>>> d8d8196f713447f8c7c5aa5de8d0320e518a65bf
             </a>
             </div>
         </div>
 
         <div class="item-grid">
-            <a href="../Produtos/MoletomBranco.html">
-            <img class="grid-item-img" src="../../Images/Moletom Branco.png" alt="Moletom Branco">
+            <a href="">
+            <img class="grid-item-img" src="" alt="">
             <div class="descrip-price">
-<<<<<<< HEAD
                 <p class="monserrat-tarjeta"></p>
                 <p class="monserrat-price"></p>
-=======
-                <p class="monserrat-tarjeta">Moletom Branco Masculino</p>
-                <p class="monserrat-price">R$ 199,99</p>
->>>>>>> d8d8196f713447f8c7c5aa5de8d0320e518a65bf
             </a>
             </div>
         </div>

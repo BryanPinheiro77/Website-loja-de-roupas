@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Css/Style.css" >
     <title>Moda Feminina</title>
+    <script>
+         // Verifica se o usuário está logado ao carregar a página
+ window.onload = function () {
+    const usuarioLogado = localStorage.getItem("usuarioLogado");
+    if (!usuarioLogado) {
+      window.location.href = "/Website loja de roupas/Html/Paginas/login.html";
+    }
+  };
+
+  // Função de logout
+  function logout() {
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "/Website loja de roupas/Html/Paginas/login.html";
+  }
+    </script>
 </head>
 <body>
     <nav class="navbar">

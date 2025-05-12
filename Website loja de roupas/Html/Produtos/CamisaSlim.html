@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="../../Css/Produtos.css" >
     <link rel="stylesheet" href="../../JavaScript/Script.js">
     <title>Camiseta Slim</title>
+    <script>
+         // Verifica se o usuário está logado ao carregar a página
+ window.onload = function () {
+    const usuarioLogado = localStorage.getItem("usuarioLogado");
+    if (!usuarioLogado) {
+      window.location.href = "/Website loja de roupas/Html/Paginas/login.html";
+    }
+  };
+
+  // Função de logout
+  function logout() {
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "/Website loja de roupas/Html/Paginas/login.html";
+  }
+    </script>
 </head>
 <body>
     

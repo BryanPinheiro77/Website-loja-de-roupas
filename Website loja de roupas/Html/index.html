@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="../Css/Style.css" >
 
     <title>Projeto Integrador</title>
+
+    <script> 
+    // Verifica se o usuário está logado ao carregar a página
+ window.onload = function () {
+    const usuarioLogado = localStorage.getItem("usuarioLogado");
+    if (!usuarioLogado) {
+      window.location.href = "../login.html";
+    }
+  };
+
+  // Função de logout
+  function logout() {
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "../ ../../Html/Paginas/login.html";
+  }
+  </script>
 </head>
 
   
@@ -93,9 +109,9 @@
 
         <div class="item-grid">
             <a href="../Html/Produtos/MoletomBranco.html">
-            <img class="grid-item-img"  src="../Images/Moletom Branco.png" alt="Moletom Branco">
+            <img class="grid-item-img"  src="../Images/Corrente masculina.jpg" alt="Moletom Branco">
             <div class="descrip-price">
-                <p class="monserrat-tarjeta">Moletom Branco</p>
+                <p class="monserrat-tarjeta">Corrente De Prata Masculina</p>
                 <p class="monserrat-price">R$ 199,99</p>
             </a>
             </div>

@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Css/Style.css" >
     <title>Moda Masculina</title>
+    <script>
+         // Verifica se o usuário está logado ao carregar a página
+ window.onload = function () {
+    const usuarioLogado = localStorage.getItem("usuarioLogado");
+    if (!usuarioLogado) {
+      window.location.href = "/Website loja de roupas/Html/Paginas/login.html";
+    }
+  };
+
+  // Função de logout
+  function logout() {
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "/Website loja de roupas/Html/Paginas/login.html";
+  }
+    </script>
 </head>
 <body>
 
@@ -75,9 +90,9 @@
 
         <div class="item-grid">
             <a href="../Produtos/MoletomBranco.html">
-            <img class="grid-item-img"  src="../../Images/Moletom Branco.png" alt="Blusa Moletom">
+            <img class="grid-item-img"  src="../../Images/Corrente masculina.jpg" alt="Corrente de prata Masculina">
             <div class="descrip-price">
-                <p class="monserrat-tarjeta">Moletom Masculino</p>
+                <p class="monserrat-tarjeta">Corrente de prata Masculina</p>
                 <p class="monserrat-price">R$ 199,99</p>
             </a>
             </div>

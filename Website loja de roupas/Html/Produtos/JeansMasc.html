@@ -6,6 +6,21 @@
     <link rel="stylesheet" href="../../Css/Style.css" >
     <link rel="stylesheet" href="../../Css/Produtos.css" >
     <title>Jeans Masculina</title>
+    <script>
+         // Verifica se o usuário está logado ao carregar a página
+ window.onload = function () {
+    const usuarioLogado = localStorage.getItem("usuarioLogado");
+    if (!usuarioLogado) {
+      window.location.href = "../../login.html";
+    }
+  };
+
+  // Função de logout
+  function logout() {
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "../ ../../Html/Paginas/login.html";
+  }
+    </script>
 </head>
 <body>
 
